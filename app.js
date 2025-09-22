@@ -27,3 +27,11 @@ console.log(typeof (d));
 
 // non primitve
 
+array = [56, "john", true, null]
+console.log(typeof (array));
+data = {
+    name :"john",
+    age: "78",
+    dept: "CSE"
+};
+console.log(typeof (data));
