@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background Section */
+#background-section {
+  background-color: #d6e0f0;
+  text-align: center;
+  padding: 40px;
+  border-bottom: 3px solid #333;
+}
+
+/* Container for articles */
+.articles-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Each Article (Card) */
+.image-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  background-color: #fff;
+  width: 220px;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.image-card p {
+  margin: 10px 0;
+}
+
+/* Buttons */
+button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
