@@ -14,6 +14,16 @@ console.log(a);
 // this,window-commands to display the functions of js
 
 a = 7463;
-console.log(typeof a);
+console.log(typeof (a));
 name ="john";
-console.log(typeof name);
+console.log(typeof (name));
+t = true;
+console.log(typeof (t));
+data = null;
+console.log(typeof (data));
+d = undefined;
+console.log(typeof (d));
+
+
+// non primitve
+
