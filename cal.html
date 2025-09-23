@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beautiful Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      margin: 0;
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 250px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-align: right;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #6a5acd;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .buttons button,
+    .ops button {
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buttons button {
+      background: #f0f0f0;
+    }
+
+    .buttons button:hover {
+      background: #dcdcdc;
+    }
+
+    .ops {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ops button {
+      background: #6a5acd;
+      color: white;
+      flex: 1;
+      margin: 0 5px;
+    }
+
+    .ops button:hover {
+      background: #483d8b;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>Simple Calculator</h2>
+
+    <!-- Input boxes -->
+    <input type="text" id="num1" readonly placeholder="First number">
+    <input type="text" id="num2" readonly placeholder="Second number">
+
+    <!-- Number buttons -->
+    <div class="buttons">
+      <button onclick="enterNumber(1)">1</button>
+      <button onclick="enterNumber(2)">2</button>
+      <button onclick="enterNumber(3)">3</button>
+      <button onclick="enterNumber(4)">4</button>
+      <button onclick="enterNumber(5)">5</button>
+      <button onclick="enterNumber(6)">6</button>
+      <button onclick="enterNumber(7)">7</button>
+      <button onclick="enterNumber(8)">8</button>
+      <button onclick="enterNumber(9)">9</button>
+      <button onclick="enterNumber(0)">0</button>
+    </div>
+
+    <!-- Operation buttons -->
+    <div class="ops">
+      <button onclick="calculate('add')">+</button>
+      <button onclick="calculate('sub')">-</button>
+      <button onclick="calculate('mul')">×</button>
+      <button onclick="calculate('div')">÷</button>
+    </div>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    let currentBox = "num1";
+
+    function enterNumber(num) {
+      document.getElementById(currentBox).value += num;
+    }
+
+    document.getElementById("num1").addEventListener("focus", () => currentBox = "num1");
+    document.getElementById("num2").addEventListener("focus", () => currentBox = "num2");
+
+    function calculate(op) {
+      let n1 = Number(document.getElementById("num1").value);
+      let n2 = Number(document.getElementById("num2").value);
+      let result;
+
+      if (op === "add") result = n1 + n2;
+      if (op === "sub") result = n1 - n2;
+      if (op === "mul") result = n1 * n2;
+      if (op === "div") result = n2 === 0 ? "Cannot divide by 0" : n1 / n2;
+
+      document.getElementById("result").innerText = "Result = " + result;
+    }
+  </script>
+
+</body>
+</html>
